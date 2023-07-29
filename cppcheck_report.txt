@@ -1,0 +1,143 @@
+src/configfile.c:402:9: error: Memory pointed to by 'path' is freed twice. [doubleFree]
+        free(c.path);
+        ^
+src/configfile.c:395:9: note: Memory pointed to by 'path' is freed twice.
+        free(c.path);
+        ^
+src/configfile.c:402:9: note: Memory pointed to by 'path' is freed twice.
+        free(c.path);
+        ^
+src/configfile.c:468:9: style: Variable 'ret' is reassigned a value before the old one has been used. [redundantAssignment]
+    ret = ini_parse(c.path, data_handler, NULL);
+        ^
+src/configfile.c:456:9: note: ret is assigned
+    ret = ini_parse(c.path, section_pattern_search_handler, NULL);
+        ^
+src/configfile.c:468:9: note: ret is overwritten
+    ret = ini_parse(c.path, data_handler, NULL);
+        ^
+src/configfile.c:468:9: style: Variable 'ret' is reassigned a value before the old one has been used. [redundantAssignment]
+    ret = ini_parse(c.path, data_handler, NULL);
+        ^
+src/configfile.c:459:13: note: ret is assigned
+        ret = ini_parse(c.path, section_name_search_handler, NULL);
+            ^
+src/configfile.c:468:9: note: ret is overwritten
+    ret = ini_parse(c.path, data_handler, NULL);
+        ^
+src/configfile.c:73:10: style: The scope of the variable 'err' can be reduced. [variableScope]
+    char err[128];
+         ^
+src/options.c:164:13: warning: %d in format string (no. 2) requires 'int *' but the argument type is 'unsigned int *'. [invalidScanfArgType_int]
+            sscanf(token, "%10[^=]=%d", keyname, &value);
+            ^
+src/options.c:212:5: warning: %d in format string (no. 2) requires 'int' but the argument type is 'unsigned int'. [invalidPrintfArgType_sint]
+    tio_printf(" Pulse duration: DTR=%d RTS=%d CTS=%d DSR=%d DCD=%d RI=%d", option.dtr_pulse_duration,
+    ^
+src/options.c:212:5: warning: %d in format string (no. 3) requires 'int' but the argument type is 'unsigned int'. [invalidPrintfArgType_sint]
+    tio_printf(" Pulse duration: DTR=%d RTS=%d CTS=%d DSR=%d DCD=%d RI=%d", option.dtr_pulse_duration,
+    ^
+src/options.c:212:5: warning: %d in format string (no. 4) requires 'int' but the argument type is 'unsigned int'. [invalidPrintfArgType_sint]
+    tio_printf(" Pulse duration: DTR=%d RTS=%d CTS=%d DSR=%d DCD=%d RI=%d", option.dtr_pulse_duration,
+    ^
+src/options.c:212:5: warning: %d in format string (no. 5) requires 'int' but the argument type is 'unsigned int'. [invalidPrintfArgType_sint]
+    tio_printf(" Pulse duration: DTR=%d RTS=%d CTS=%d DSR=%d DCD=%d RI=%d", option.dtr_pulse_duration,
+    ^
+src/options.c:212:5: warning: %d in format string (no. 6) requires 'int' but the argument type is 'unsigned int'. [invalidPrintfArgType_sint]
+    tio_printf(" Pulse duration: DTR=%d RTS=%d CTS=%d DSR=%d DCD=%d RI=%d", option.dtr_pulse_duration,
+    ^
+src/options.c:212:5: warning: %d in format string (no. 7) requires 'int' but the argument type is 'unsigned int'. [invalidPrintfArgType_sint]
+    tio_printf(" Pulse duration: DTR=%d RTS=%d CTS=%d DSR=%d DCD=%d RI=%d", option.dtr_pulse_duration,
+    ^
+src/options.c:212:5: warning: %d in format string (no. 8) requires 'int' but the argument type is 'unsigned int'. [invalidPrintfArgType_sint]
+    tio_printf(" Pulse duration: DTR=%d RTS=%d CTS=%d DSR=%d DCD=%d RI=%d", option.dtr_pulse_duration,
+    ^
+src/options.c:229:9: style: The scope of the variable 'c' can be reduced. [variableScope]
+    int c;
+        ^
+src/rs485.c:60:13: warning: %d in format string (no. 2) requires 'int *' but the argument type is 'unsigned int *'. [invalidScanfArgType_int]
+            sscanf(token, "%30[^=]=%d", keyname, &value);
+            ^
+src/setspeed.c:52:12: style: Variable 'status' is reassigned a value before the old one has been used. [redundantAssignment]
+    status = ioctl(fd, TCSETS2, &tio);
+           ^
+src/setspeed.c:44:12: note: status is assigned
+    status = ioctl(fd, TCGETS2, &tio);
+           ^
+src/setspeed.c:52:12: note: status is overwritten
+    status = ioctl(fd, TCSETS2, &tio);
+           ^
+src/socket.c:86:9: style: The scope of the variable 'sockfd' can be reduced. [variableScope]
+    int sockfd;
+        ^
+src/socket.c:276:28: style:inconclusive: Function 'socket_add_fds' argument 1 names different: declaration 'fds' definition 'rdfs'. [funcArgNamesDifferent]
+int socket_add_fds(fd_set *rdfs, bool connected)
+                           ^
+src/socket.h:30:28: note: Function 'socket_add_fds' argument 1 names different: declaration 'fds' definition 'rdfs'.
+int socket_add_fds(fd_set *fds, bool connected);
+                           ^
+src/socket.c:276:28: note: Function 'socket_add_fds' argument 1 names different: declaration 'fds' definition 'rdfs'.
+int socket_add_fds(fd_set *rdfs, bool connected)
+                           ^
+src/socket.c:306:34: style:inconclusive: Function 'socket_handle_input' argument 1 names different: declaration 'fds' definition 'rdfs'. [funcArgNamesDifferent]
+bool socket_handle_input(fd_set *rdfs, char *output_char)
+                                 ^
+src/socket.h:31:34: note: Function 'socket_handle_input' argument 1 names different: declaration 'fds' definition 'rdfs'.
+bool socket_handle_input(fd_set *fds, char *output_char);
+                                 ^
+src/socket.c:306:34: note: Function 'socket_handle_input' argument 1 names different: declaration 'fds' definition 'rdfs'.
+bool socket_handle_input(fd_set *rdfs, char *output_char)
+                                 ^
+src/socket.c:55:9: style: Local variable 'port_number' shadows outer variable [shadowVariable]
+    int port_number = atoi(option.socket + 5);
+        ^
+src/socket.c:44:12: note: Shadowed declaration
+static int port_number = SOCKET_PORT_DEFAULT;
+           ^
+src/socket.c:55:9: note: Shadow variable
+    int port_number = atoi(option.socket + 5);
+        ^
+src/socket.c:66:9: style: Local variable 'port_number' shadows outer variable [shadowVariable]
+    int port_number = atoi(option.socket + 6);
+        ^
+src/socket.c:44:12: note: Shadowed declaration
+static int port_number = SOCKET_PORT_DEFAULT;
+           ^
+src/socket.c:66:9: note: Shadow variable
+    int port_number = atoi(option.socket + 6);
+        ^
+src/socket.c:86:9: style: Local variable 'sockfd' shadows outer variable [shadowVariable]
+    int sockfd;
+        ^
+src/socket.c:41:12: note: Shadowed declaration
+static int sockfd;
+           ^
+src/socket.c:86:9: note: Shadow variable
+    int sockfd;
+        ^
+src/tty.c:1254:19: style: Variable 'print_tainted' is reassigned a value before the old one has been used. [redundantAssignment]
+    print_tainted = false;
+                  ^
+src/tty.c:1252:5: note: print_tainted is assigned
+    tio_printf("Connected");
+    ^
+src/tty.c:1254:19: note: print_tainted is overwritten
+    print_tainted = false;
+                  ^
+src/tty.c:197:13: style: The scope of the variable 'count' can be reduced. [variableScope]
+    ssize_t count;
+            ^
+src/tty.c:220:13: style: The scope of the variable 'retval' can be reduced. [variableScope]
+    ssize_t retval = 0, bytes_written = 0;
+            ^
+src/tty.c:282:13: style: The scope of the variable 'byte_count' can be reduced. [variableScope]
+    ssize_t byte_count;
+            ^
+src/tty.c:314:18: style: The scope of the variable 'input_char' can be reduced. [variableScope]
+            char input_char;
+                 ^
+src/tty.c:220:20: style: Variable 'retval' is assigned a value that is never used. [unreadVariable]
+    ssize_t retval = 0, bytes_written = 0;
+                   ^
+nofile:0:0: information: Cppcheck cannot find all the include files (use --check-config for details) [missingInclude]
+
